@@ -1,0 +1,499 @@
+/* Primary Navbar */
+.primary-nav {
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 70px;
+    border-bottom: 1px solid #eee;
+}
+
+.primary-nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.logo i {
+    font-size: 1.8rem;
+    color: #FF6B6B;
+}
+
+.logo span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    width: 300px;
+    transition: all 0.2s ease;
+    border: 1px solid #eee;
+}
+
+.search-box:focus-within {
+    background: #ffffff;
+    border-color: #FF6B6B;
+    box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.1);
+}
+
+#search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0.3rem;
+    width: 100%;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+#search-input::placeholder {
+    color: #adb5bd;
+}
+
+.voice-btn, .search-btn {
+    background: none;
+    border: none;
+    color: #adb5bd;
+    cursor: pointer;
+    padding: 0.3rem;
+    transition: color 0.2s ease;
+}
+
+.voice-btn:hover, .search-btn:hover {
+    color: #FF6B6B;
+}
+
+.primary-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.login-btn, .signup-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.login-btn {
+    color: #666;
+}
+
+.login-btn:hover {
+    color: #FF6B6B;
+}
+
+.signup-btn {
+    background: #FF6B6B;
+    color: white;
+}
+
+.signup-btn:hover {
+    background: #ff5252;
+}
+
+/* Secondary Navbar */
+.secondary-nav {
+    background: #f8f9fa;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 50px;
+    border-bottom: 1px solid #eee;
+}
+
+.secondary-nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.nav-links a:hover {
+    color: #FF6B6B;
+    background: rgba(255, 107, 107, 0.08);
+}
+
+.nav-links a.active {
+    color: #FF6B6B;
+    background: rgba(255, 107, 107, 0.08);
+}
+
+.nav-links a i {
+    font-size: 1rem;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 0.5rem;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: all 0.2s ease;
+    border: 1px solid #eee;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content a {
+    padding: 0.6rem 1rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+.dropdown-content a:hover {
+    background: rgba(255, 107, 107, 0.08);
+    color: #FF6B6B;
+}
+
+.dropdown-content a i {
+    font-size: 0.9rem;
+    color: #FF6B6B;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.4rem;
+}
+
+.menu-toggle:hover {
+    color: #FF6B6B;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .search-box {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .primary-nav-container,
+    .secondary-nav-container {
+        padding: 0 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .search-box {
+        display: none;
+    }
+
+    .secondary-nav {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        border-top: 1px solid #eee;
+        display: none;
+    }
+
+    .mobile-nav.active {
+        display: block;
+    }
+
+    .mobile-nav .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .mobile-nav .nav-links a {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    .mobile-nav .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: #f8f9fa;
+        margin-top: 0.5rem;
+        display: none;
+        width: 100%;
+    }
+
+    .mobile-nav .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .mobile-nav .user-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .mobile-nav .login-btn,
+    .mobile-nav .signup-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem;
+    }
+}
+
+/* Adjust main content padding for fixed navbars */
+main {
+    margin-top: 120px; /* 70px primary + 50px secondary */
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-top: 70px; /* Only primary nav visible on mobile */
+    }
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.logo i {
+    color: #ff6b6b;
+    margin-right: 0.5rem;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ff6b6b;
+}
+
+/* User Actions */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 24px;
+    padding: 0.5rem 1rem;
+}
+
+.search-box input {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0.25rem;
+    width: 200px;
+    font-size: 0.9rem;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.search-box button:hover {
+    color: #ff6b6b;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.login-btn,
+.signup-btn {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 24px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.login-btn {
+    color: #333;
+    background-color: transparent;
+}
+
+.signup-btn {
+    color: #fff;
+    background-color: #ff6b6b;
+}
+
+.login-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.signup-btn:hover {
+    background-color: #ff5252;
+}
+
+/* Menu Toggle */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .search-box {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .auth-buttons {
+        display: none;
+    }
+} 

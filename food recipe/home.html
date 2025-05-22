@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Recipe - Your Cooking Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="/" class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <span>Food Recipe</span>
+                </a>
+            </div>
+            
+            <div class="header-center">
+                <div class="search-container">
+                    <input type="text" placeholder="Search for recipes...">
+                    <button class="voice-search-btn" title="Search by voice">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <button class="search-btn" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="auth-buttons">
+                    <a href="/login" class="login-btn">Login</a>
+                    <a href="/signup" class="signup-btn">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+                <a href="#"><i class="fas fa-th-list"></i> Categories</a>
+                <a href="#"><i class="fas fa-star"></i> Popular</a>
+                <a href="#"><i class="fas fa-heart"></i> Favorites</a>
+                <a href="#"><i class="fas fa-info-circle"></i> About</a>
+            </div>
+
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Discover Amazing Recipes</h1>
+                <p>From quick snacks to gourmet meals, find your perfect recipe</p>
+                <div class="hero-buttons">
+                    <a href="#explore" class="explore-btn">Explore Recipes</a>
+                    <a href="#learn" class="learn-btn">Learn Cooking</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="number">10,000+</span>
+                        <span class="label">Recipes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">500+</span>
+                        <span class="label">Chefs</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">1M+</span>
+                        <span class="label">Users</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" alt="Delicious Food">
+                <div class="image-overlay">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                    <div class="cooking-time">
+                        <i class="fas fa-clock"></i>
+                        <span>30 mins</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-clock"></i>
+                <h3>Quick Recipes</h3>
+                <p>Find recipes that take less than 30 minutes to prepare</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-heart"></i>
+                <h3>Healthy Options</h3>
+                <p>Discover nutritious and balanced meal ideas</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-star"></i>
+                <h3>Chef's Choice</h3>
+                <p>Explore recipes recommended by professional chefs</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-utensils"></i>
+                <h3>Cooking Classes</h3>
+                <p>Learn from expert chefs with video tutorials</p>
+            </div>
+        </section>
+
+        <section class="popular-categories">
+            <h2>Popular Categories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" alt="Breakfast">
+                    <div class="category-info">
+                        <h3>Breakfast</h3>
+                        <p>Start your day right</p>
+                        <span class="recipe-count">120+ Recipes</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Lunch">
+                    <div class="category-info">
+                        <h3>Lunch</h3>
+                        <p>Quick and delicious</p>
+                        <span class="recipe-count">150+ Recipes</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Dinner">
+                    <div class="category-info">
+                        <h3>Dinner</h3>
+                        <p>Perfect evening meals</p>
+                        <span class="recipe-count">200+ Recipes</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Desserts">
+                    <div class="category-info">
+                        <h3>Desserts</h3>
+                        <p>Sweet treats</p>
+                        <span class="recipe-count">100+ Recipes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trending-recipes">
+            <h2>Trending Recipes</h2>
+            <div class="recipe-grid">
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Healthy Salad">
+                        <div class="recipe-tags">
+                            <span class="tag healthy">Healthy</span>
+                            <span class="tag quick">Quick</span>
+                        </div>
+                        <button class="save-recipe"><i class="fas fa-bookmark"></i></button>
+                    </div>
+                    <div class="recipe-info">
+                        <h3>Mediterranean Salad</h3>
+                        <p>Fresh and healthy salad with olives and feta</p>
+                        <div class="recipe-meta">
+                            <span><i class="fas fa-clock"></i> 15 mins</span>
+                            <span><i class="fas fa-fire"></i> 320 cal</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <div class="recipe-actions">
+                            <button class="view-recipe">View Recipe</button>
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more recipe cards here -->
+            </div>
+        </section>
+
+        <section class="chef-spotlight">
+            <h2>Chef Spotlight</h2>
+            <div class="chef-grid">
+                <div class="chef-card">
+                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033" alt="Chef John">
+                    <div class="chef-info">
+                        <h3>Chef John</h3>
+                        <p>Italian Cuisine Expert</p>
+                        <div class="chef-stats">
+                            <span><i class="fas fa-utensils"></i> 500+ Recipes</span>
+                            <span><i class="fas fa-star"></i> 4.9 Rating</span>
+                        </div>
+                        <button class="follow-chef">Follow</button>
+                    </div>
+                </div>
+                <!-- Add more chef cards here -->
+            </div>
+        </section>
+
+        <section class="cooking-tips">
+            <h2>Cooking Tips & Tricks</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-knife-kitchen"></i>
+                    <h3>Knife Skills</h3>
+                    <p>Learn proper cutting techniques</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Measurement Guide</h3>
+                    <p>Convert measurements easily</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-temperature-high"></i>
+                    <h3>Cooking Temperatures</h3>
+                    <p>Perfect cooking temperatures</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get weekly recipe updates and cooking tips</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We share delicious and easy-to-make recipes for everyone!</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@deliciousrecipes.com</p>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Recipe Street, Food City</p>
+            </div>
+            <div class="footer-section">
+                <h3>Download Our App</h3>
+                <div class="app-download">
+                    <a href="#" class="app-store">
+                        <i class="fab fa-apple"></i>
+                        <span>App Store</span>
+                    </a>
+                    <a href="#" class="play-store">
+                        <i class="fab fa-google-play"></i>
+                        <span>Play Store</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Delicious Recipes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        menuToggle.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.mobile-nav') && !e.target.closest('.menu-toggle')) {
+                mobileNav.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
+
+        // Voice Search
+        const voiceSearch = document.querySelector('.search-box button');
+        const searchInput = document.querySelector('.search-box input');
+
+        if ('webkitSpeechRecognition' in window) {
+            const recognition = new webkitSpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+
+            voiceSearch.addEventListener('click', () => {
+                recognition.start();
+                voiceSearch.classList.add('listening');
+            });
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                searchInput.value = transcript;
+                voiceSearch.classList.remove('listening');
+            };
+
+            recognition.onerror = () => {
+                voiceSearch.classList.remove('listening');
+            };
+        } else {
+            voiceSearch.style.display = 'none';
+        }
+
+        // Mobile Dropdown Menu
+        const dropdowns = document.querySelectorAll('.mobile-nav .dropdown');
+        
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            const menu = dropdown.querySelector('.dropdown-content');
+            
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                dropdown.classList.toggle('active');
+
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.querySelector('.dropdown-content').style.display = 'none';
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.dropdown')) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.querySelector('.dropdown-content').style.display = 'none';
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+
+        // Save Recipe
+        const saveButtons = document.querySelectorAll('.save-recipe');
+        saveButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('saved');
+            });
+        });
+
+        // Add to Cart
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.add('added');
+                setTimeout(() => {
+                    button.classList.remove('added');
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html> 

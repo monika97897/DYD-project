@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Recipes - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Delicious Recipes</span>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search recipes...">
+                <button id="voice-search" class="voice-btn">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button id="search-btn" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#recipes">Recipes</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="slideshow-container">
+            <div class="slideshow">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" alt="Delicious Food">
+                    <div class="slide-content">
+                        <h2>Welcome to Delicious Recipes</h2>
+                        <p>Discover amazing recipes from around the world</p>
+                        <a href="home.html" class="explore-btn">Explore Recipes</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Healthy Food">
+                    <div class="slide-content">
+                        <h2>Healthy & Tasty</h2>
+                        <p>Find nutritious recipes that don't compromise on taste</p>
+                        <a href="home.html" class="explore-btn">Get Started</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Quick Recipes">
+                    <div class="slide-content">
+                        <h2>Quick & Easy</h2>
+                        <p>Perfect recipes for busy weekdays</p>
+                        <a href="home.html" class="explore-btn">View Recipes</a>
+                    </div>
+                </div>
+            </div>
+            <button class="slide-btn prev" onclick="moveSlide(-1)">❮</button>
+            <button class="slide-btn next" onclick="moveSlide(1)">❯</button>
+            <div class="slide-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-utensils"></i>
+                <h3>1000+ Recipes</h3>
+                <p>Explore our extensive collection of recipes</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-clock"></i>
+                <h3>Quick & Easy</h3>
+                <p>Find recipes that fit your schedule</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-heart"></i>
+                <h3>Healthy Options</h3>
+                <p>Discover nutritious and delicious meals</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We share delicious and easy-to-make recipes for everyone!</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@deliciousrecipes.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Delicious Recipes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Voice Search
+        const voiceSearch = document.getElementById('voice-search');
+        const searchInput = document.getElementById('search-input');
+
+        if ('webkitSpeechRecognition' in window) {
+            const recognition = new webkitSpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+
+            voiceSearch.addEventListener('click', () => {
+                recognition.start();
+                voiceSearch.classList.add('listening');
+            });
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                searchInput.value = transcript;
+                voiceSearch.classList.remove('listening');
+            };
+
+            recognition.onerror = () => {
+                voiceSearch.classList.remove('listening');
+            };
+        } else {
+            voiceSearch.style.display = 'none';
+        }
+
+        // Slideshow
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            slides[slideIndex-1].classList.add("active");
+            dots[slideIndex-1].classList.add("active");
+        }
+
+        // Auto slide
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+    </script>
+</body>
+</html> 
